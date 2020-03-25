@@ -1,3 +1,4 @@
+import Components.Engine;
 import Vehicles.Car;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,5 +39,11 @@ public class CarTest {
         assertEquals(0, car.getNumberOfComponents());
     }
 
+    @Test
+    public void canAddComponent(){
+        Engine engine= new Engine(4,"ferrari","engine");
+        car.addComponent(engine);
+        assertEquals(1,car.getNumberOfComponents());
+    }
 
 }
