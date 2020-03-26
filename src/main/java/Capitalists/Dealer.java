@@ -39,4 +39,13 @@ public class Dealer extends Capitalist {
             this.getMoney(vehicle.getPrice());
         }
     }
+
+    public void repairVehicle(Vehicle vehicle){
+        int repairCost = vehicle.getDamageCost();
+        if(this.money>repairCost){
+            this.money -= repairCost;
+            vehicle.setDamageCost(0);
+        }
+    }
+
 }

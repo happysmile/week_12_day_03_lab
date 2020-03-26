@@ -6,13 +6,15 @@ import java.util.ArrayList;
 
 public abstract class Vehicle {
 
-    private int price;
+    protected int price;
     private String colour;
     private ArrayList<Component> components;
     private String make;
     private String model;
+    protected int damageCost;
 
     public Vehicle(int price, String colour, String make, String model) {
+        this.damageCost = 0;
         this.price = price;
         this.colour = colour;
         this.components = new ArrayList<Component>();
@@ -21,7 +23,11 @@ public abstract class Vehicle {
     }
 
     public int getPrice() {
-        return this.price;
+       return this.price - this.damageCost;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public String getModel() {
@@ -48,7 +54,13 @@ public abstract class Vehicle {
         return this.components.size();
     }
 
+    public void setDamageCost(int damageCost) {
+        this.damageCost = damageCost;
+    }
 
+    public int getDamageCost() {
+        return this.damageCost;
+    }
 }
 
 

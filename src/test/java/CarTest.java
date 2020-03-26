@@ -46,4 +46,12 @@ public class CarTest {
         assertEquals(1,car.getNumberOfComponents());
     }
 
+    @Test
+    public void canAddDamage(){
+        assertEquals(500, car.getPrice());
+        car.setDamageCost(20);
+        assertEquals(480, car.getPrice());
+    }
+
+
 }
